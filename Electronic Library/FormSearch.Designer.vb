@@ -1,9 +1,9 @@
-﻿<Global.Microsoft.VisualBasic.CompilerServices.DesignerGenerated()> _
-Partial Class FormSearch
+﻿<Global.Microsoft.VisualBasic.CompilerServices.DesignerGenerated()>
+Partial Class Search
     Inherits System.Windows.Forms.Form
 
     'Form overrides dispose to clean up the component list.
-    <System.Diagnostics.DebuggerNonUserCode()> _
+    <System.Diagnostics.DebuggerNonUserCode()>
     Protected Overrides Sub Dispose(ByVal disposing As Boolean)
         Try
             If disposing AndAlso components IsNot Nothing Then
@@ -20,11 +20,11 @@ Partial Class FormSearch
     'NOTE: The following procedure is required by the Windows Form Designer
     'It can be modified using the Windows Form Designer.  
     'Do not modify it using the code editor.
-    <System.Diagnostics.DebuggerStepThrough()> _
+    <System.Diagnostics.DebuggerStepThrough()>
     Private Sub InitializeComponent()
         Me.SearchLabel = New System.Windows.Forms.Label()
-        Me.Keyword1ComboBox = New System.Windows.Forms.ComboBox()
-        Me.Like1ComboBox = New System.Windows.Forms.ComboBox()
+        Me.KeywordComboBox = New System.Windows.Forms.ComboBox()
+        Me.LikeComboBox = New System.Windows.Forms.ComboBox()
         Me.SearchResourceListView = New System.Windows.Forms.ListView()
         Me.Title = CType(New System.Windows.Forms.ColumnHeader(), System.Windows.Forms.ColumnHeader)
         Me.Author = CType(New System.Windows.Forms.ColumnHeader(), System.Windows.Forms.ColumnHeader)
@@ -40,6 +40,7 @@ Partial Class FormSearch
         Me.CheckOutButton = New System.Windows.Forms.Button()
         Me.UserInputTextBox1 = New System.Windows.Forms.TextBox()
         Me.ClearButton = New System.Windows.Forms.Button()
+        Me.ResultLabel = New System.Windows.Forms.Label()
         Me.SuspendLayout()
         '
         'SearchLabel
@@ -52,34 +53,34 @@ Partial Class FormSearch
         Me.SearchLabel.TabIndex = 1
         Me.SearchLabel.Text = "Search"
         '
-        'Keyword1ComboBox
+        'KeywordComboBox
         '
-        Me.Keyword1ComboBox.DropDownStyle = System.Windows.Forms.ComboBoxStyle.DropDownList
-        Me.Keyword1ComboBox.Font = New System.Drawing.Font("Microsoft Sans Serif", 11.25!, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, CType(0, Byte))
-        Me.Keyword1ComboBox.FormattingEnabled = True
-        Me.Keyword1ComboBox.Items.AddRange(New Object() {"Title", "Author", "ISBN"})
-        Me.Keyword1ComboBox.Location = New System.Drawing.Point(77, 91)
-        Me.Keyword1ComboBox.Name = "Keyword1ComboBox"
-        Me.Keyword1ComboBox.Size = New System.Drawing.Size(120, 26)
-        Me.Keyword1ComboBox.TabIndex = 2
+        Me.KeywordComboBox.DropDownStyle = System.Windows.Forms.ComboBoxStyle.DropDownList
+        Me.KeywordComboBox.Font = New System.Drawing.Font("Microsoft Sans Serif", 11.0!)
+        Me.KeywordComboBox.FormattingEnabled = True
+        Me.KeywordComboBox.Items.AddRange(New Object() {"Title", "Author", "ISBN"})
+        Me.KeywordComboBox.Location = New System.Drawing.Point(43, 91)
+        Me.KeywordComboBox.Name = "KeywordComboBox"
+        Me.KeywordComboBox.Size = New System.Drawing.Size(95, 26)
+        Me.KeywordComboBox.TabIndex = 2
         '
-        'Like1ComboBox
+        'LikeComboBox
         '
-        Me.Like1ComboBox.DropDownStyle = System.Windows.Forms.ComboBoxStyle.DropDownList
-        Me.Like1ComboBox.Font = New System.Drawing.Font("Microsoft Sans Serif", 11.25!, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, CType(0, Byte))
-        Me.Like1ComboBox.FormattingEnabled = True
-        Me.Like1ComboBox.Items.AddRange(New Object() {"=", "Like"})
-        Me.Like1ComboBox.Location = New System.Drawing.Point(230, 91)
-        Me.Like1ComboBox.Name = "Like1ComboBox"
-        Me.Like1ComboBox.Size = New System.Drawing.Size(60, 26)
-        Me.Like1ComboBox.TabIndex = 4
+        Me.LikeComboBox.DropDownStyle = System.Windows.Forms.ComboBoxStyle.DropDownList
+        Me.LikeComboBox.Font = New System.Drawing.Font("Microsoft Sans Serif", 11.0!)
+        Me.LikeComboBox.FormattingEnabled = True
+        Me.LikeComboBox.Items.AddRange(New Object() {"=", "like"})
+        Me.LikeComboBox.Location = New System.Drawing.Point(158, 91)
+        Me.LikeComboBox.Name = "LikeComboBox"
+        Me.LikeComboBox.Size = New System.Drawing.Size(50, 26)
+        Me.LikeComboBox.TabIndex = 4
         '
         'SearchResourceListView
         '
         Me.SearchResourceListView.Columns.AddRange(New System.Windows.Forms.ColumnHeader() {Me.Title, Me.Author, Me.PublicationDate, Me.Series, Me.ISBN, Me.Subject, Me.CheckOutPeriod, Me.Avaibility})
-        Me.SearchResourceListView.Location = New System.Drawing.Point(43, 208)
+        Me.SearchResourceListView.Location = New System.Drawing.Point(43, 200)
         Me.SearchResourceListView.Name = "SearchResourceListView"
-        Me.SearchResourceListView.Size = New System.Drawing.Size(570, 214)
+        Me.SearchResourceListView.Size = New System.Drawing.Size(593, 222)
         Me.SearchResourceListView.TabIndex = 10
         Me.SearchResourceListView.UseCompatibleStateImageBehavior = False
         Me.SearchResourceListView.View = System.Windows.Forms.View.Details
@@ -124,68 +125,79 @@ Partial Class FormSearch
         '
         'SearchButton
         '
-        Me.SearchButton.Font = New System.Drawing.Font("Microsoft Sans Serif", 12.0!, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, CType(0, Byte))
-        Me.SearchButton.Location = New System.Drawing.Point(182, 156)
+        Me.SearchButton.Font = New System.Drawing.Font("Microsoft Sans Serif", 11.0!)
+        Me.SearchButton.Location = New System.Drawing.Point(546, 87)
         Me.SearchButton.Name = "SearchButton"
-        Me.SearchButton.Size = New System.Drawing.Size(90, 31)
+        Me.SearchButton.Size = New System.Drawing.Size(90, 30)
         Me.SearchButton.TabIndex = 11
         Me.SearchButton.Text = "Search"
         Me.SearchButton.UseVisualStyleBackColor = True
         '
         'LogoutButton
         '
-        Me.LogoutButton.Font = New System.Drawing.Font("Microsoft Sans Serif", 12.0!, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, CType(0, Byte))
-        Me.LogoutButton.Location = New System.Drawing.Point(655, 93)
+        Me.LogoutButton.Font = New System.Drawing.Font("Microsoft Sans Serif", 11.0!)
+        Me.LogoutButton.Location = New System.Drawing.Point(655, 392)
         Me.LogoutButton.Name = "LogoutButton"
-        Me.LogoutButton.Size = New System.Drawing.Size(90, 31)
+        Me.LogoutButton.Size = New System.Drawing.Size(90, 30)
         Me.LogoutButton.TabIndex = 12
         Me.LogoutButton.Text = "Logout"
         Me.LogoutButton.UseVisualStyleBackColor = True
         '
         'AccountButton
         '
-        Me.AccountButton.Font = New System.Drawing.Font("Microsoft Sans Serif", 12.0!, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, CType(0, Byte))
-        Me.AccountButton.Location = New System.Drawing.Point(655, 31)
+        Me.AccountButton.Font = New System.Drawing.Font("Microsoft Sans Serif", 11.0!)
+        Me.AccountButton.Location = New System.Drawing.Point(655, 356)
         Me.AccountButton.Name = "AccountButton"
-        Me.AccountButton.Size = New System.Drawing.Size(90, 31)
+        Me.AccountButton.Size = New System.Drawing.Size(90, 30)
         Me.AccountButton.TabIndex = 13
         Me.AccountButton.Text = "Account"
         Me.AccountButton.UseVisualStyleBackColor = True
         '
         'CheckOutButton
         '
-        Me.CheckOutButton.Font = New System.Drawing.Font("Microsoft Sans Serif", 12.0!, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, CType(0, Byte))
-        Me.CheckOutButton.Location = New System.Drawing.Point(655, 367)
+        Me.CheckOutButton.Font = New System.Drawing.Font("Microsoft Sans Serif", 11.0!)
+        Me.CheckOutButton.Location = New System.Drawing.Point(655, 198)
         Me.CheckOutButton.Name = "CheckOutButton"
-        Me.CheckOutButton.Size = New System.Drawing.Size(90, 55)
+        Me.CheckOutButton.Size = New System.Drawing.Size(90, 30)
         Me.CheckOutButton.TabIndex = 14
         Me.CheckOutButton.Text = "Check Out"
         Me.CheckOutButton.UseVisualStyleBackColor = True
         '
         'UserInputTextBox1
         '
-        Me.UserInputTextBox1.Font = New System.Drawing.Font("Microsoft Sans Serif", 11.25!, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, CType(0, Byte))
-        Me.UserInputTextBox1.Location = New System.Drawing.Point(339, 91)
+        Me.UserInputTextBox1.Font = New System.Drawing.Font("Microsoft Sans Serif", 11.0!)
+        Me.UserInputTextBox1.Location = New System.Drawing.Point(233, 91)
         Me.UserInputTextBox1.Name = "UserInputTextBox1"
-        Me.UserInputTextBox1.Size = New System.Drawing.Size(132, 24)
+        Me.UserInputTextBox1.Size = New System.Drawing.Size(286, 24)
         Me.UserInputTextBox1.TabIndex = 15
         '
         'ClearButton
         '
-        Me.ClearButton.Font = New System.Drawing.Font("Microsoft Sans Serif", 12.0!, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, CType(0, Byte))
-        Me.ClearButton.Location = New System.Drawing.Point(339, 156)
+        Me.ClearButton.Font = New System.Drawing.Font("Microsoft Sans Serif", 11.0!)
+        Me.ClearButton.Location = New System.Drawing.Point(655, 88)
         Me.ClearButton.Name = "ClearButton"
-        Me.ClearButton.Size = New System.Drawing.Size(90, 31)
+        Me.ClearButton.Size = New System.Drawing.Size(90, 30)
         Me.ClearButton.TabIndex = 16
         Me.ClearButton.Text = "Clear"
         Me.ClearButton.UseVisualStyleBackColor = True
         '
-        'FormSearch
+        'ResultLabel
+        '
+        Me.ResultLabel.AutoSize = True
+        Me.ResultLabel.Font = New System.Drawing.Font("Microsoft Sans Serif", 16.0!, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, CType(0, Byte))
+        Me.ResultLabel.Location = New System.Drawing.Point(38, 160)
+        Me.ResultLabel.Name = "ResultLabel"
+        Me.ResultLabel.Size = New System.Drawing.Size(74, 26)
+        Me.ResultLabel.TabIndex = 17
+        Me.ResultLabel.Text = "Result"
+        '
+        'Search
         '
         Me.AutoScaleDimensions = New System.Drawing.SizeF(6.0!, 13.0!)
         Me.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font
         Me.BackColor = System.Drawing.SystemColors.ButtonFace
-        Me.ClientSize = New System.Drawing.Size(784, 461)
+        Me.ClientSize = New System.Drawing.Size(784, 462)
+        Me.Controls.Add(Me.ResultLabel)
         Me.Controls.Add(Me.ClearButton)
         Me.Controls.Add(Me.UserInputTextBox1)
         Me.Controls.Add(Me.CheckOutButton)
@@ -193,13 +205,13 @@ Partial Class FormSearch
         Me.Controls.Add(Me.LogoutButton)
         Me.Controls.Add(Me.SearchButton)
         Me.Controls.Add(Me.SearchResourceListView)
-        Me.Controls.Add(Me.Like1ComboBox)
-        Me.Controls.Add(Me.Keyword1ComboBox)
+        Me.Controls.Add(Me.LikeComboBox)
+        Me.Controls.Add(Me.KeywordComboBox)
         Me.Controls.Add(Me.SearchLabel)
         Me.MaximizeBox = False
         Me.MaximumSize = New System.Drawing.Size(800, 500)
         Me.MinimumSize = New System.Drawing.Size(800, 500)
-        Me.Name = "FormSearch"
+        Me.Name = "Search"
         Me.Text = "Search"
         Me.ResumeLayout(False)
         Me.PerformLayout()
@@ -207,8 +219,8 @@ Partial Class FormSearch
     End Sub
 
     Friend WithEvents SearchLabel As Label
-    Friend WithEvents Keyword1ComboBox As ComboBox
-    Friend WithEvents Like1ComboBox As ComboBox
+    Friend WithEvents KeywordComboBox As ComboBox
+    Friend WithEvents LikeComboBox As ComboBox
     Friend WithEvents SearchResourceListView As ListView
     Friend WithEvents Title As ColumnHeader
     Friend WithEvents Author As ColumnHeader
@@ -224,4 +236,5 @@ Partial Class FormSearch
     Friend WithEvents CheckOutButton As Button
     Friend WithEvents UserInputTextBox1 As TextBox
     Friend WithEvents ClearButton As Button
+    Friend WithEvents ResultLabel As Label
 End Class

@@ -37,7 +37,6 @@ Partial Class Account
         Me.DNameLabel = New System.Windows.Forms.Label()
         Me.EmailLabel = New System.Windows.Forms.Label()
         Me.DEmailLabel = New System.Windows.Forms.Label()
-        Me.SearchButton = New System.Windows.Forms.Button()
         Me.LogoutButton = New System.Windows.Forms.Button()
         Me.SuspendLayout()
         '
@@ -55,7 +54,7 @@ Partial Class Account
         '
         Me.ResourceLabel.AutoSize = True
         Me.ResourceLabel.Font = New System.Drawing.Font("Microsoft Sans Serif", 16.0!, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, CType(0, Byte))
-        Me.ResourceLabel.Location = New System.Drawing.Point(39, 163)
+        Me.ResourceLabel.Location = New System.Drawing.Point(39, 160)
         Me.ResourceLabel.Name = "ResourceLabel"
         Me.ResourceLabel.Size = New System.Drawing.Size(105, 26)
         Me.ResourceLabel.TabIndex = 1
@@ -64,9 +63,9 @@ Partial Class Account
         'AccountResourceListView
         '
         Me.AccountResourceListView.Columns.AddRange(New System.Windows.Forms.ColumnHeader() {Me.Title, Me.Author, Me.PublicationDate, Me.Series, Me.ISBN, Me.Subject})
-        Me.AccountResourceListView.Location = New System.Drawing.Point(43, 208)
+        Me.AccountResourceListView.Location = New System.Drawing.Point(41, 200)
         Me.AccountResourceListView.Name = "AccountResourceListView"
-        Me.AccountResourceListView.Size = New System.Drawing.Size(570, 214)
+        Me.AccountResourceListView.Size = New System.Drawing.Size(590, 222)
         Me.AccountResourceListView.TabIndex = 2
         Me.AccountResourceListView.UseCompatibleStateImageBehavior = False
         Me.AccountResourceListView.View = System.Windows.Forms.View.Details
@@ -103,20 +102,20 @@ Partial Class Account
         '
         'ReturnButton
         '
-        Me.ReturnButton.Font = New System.Drawing.Font("Microsoft Sans Serif", 12.0!, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, CType(0, Byte))
-        Me.ReturnButton.Location = New System.Drawing.Point(655, 325)
+        Me.ReturnButton.Font = New System.Drawing.Font("Microsoft Sans Serif", 11.0!)
+        Me.ReturnButton.Location = New System.Drawing.Point(664, 200)
         Me.ReturnButton.Name = "ReturnButton"
-        Me.ReturnButton.Size = New System.Drawing.Size(90, 31)
+        Me.ReturnButton.Size = New System.Drawing.Size(90, 30)
         Me.ReturnButton.TabIndex = 3
         Me.ReturnButton.Text = "Return"
         Me.ReturnButton.UseVisualStyleBackColor = True
         '
         'RenewBotton
         '
-        Me.RenewBotton.Font = New System.Drawing.Font("Microsoft Sans Serif", 12.0!, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, CType(0, Byte))
-        Me.RenewBotton.Location = New System.Drawing.Point(655, 391)
+        Me.RenewBotton.Font = New System.Drawing.Font("Microsoft Sans Serif", 11.0!)
+        Me.RenewBotton.Location = New System.Drawing.Point(664, 250)
         Me.RenewBotton.Name = "RenewBotton"
-        Me.RenewBotton.Size = New System.Drawing.Size(90, 31)
+        Me.RenewBotton.Size = New System.Drawing.Size(90, 30)
         Me.RenewBotton.TabIndex = 4
         Me.RenewBotton.Text = "Renew"
         Me.RenewBotton.UseVisualStyleBackColor = True
@@ -124,28 +123,28 @@ Partial Class Account
         'NameLabel
         '
         Me.NameLabel.AutoSize = True
-        Me.NameLabel.Font = New System.Drawing.Font("Microsoft Sans Serif", 12.0!, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, CType(0, Byte))
-        Me.NameLabel.Location = New System.Drawing.Point(131, 91)
+        Me.NameLabel.Font = New System.Drawing.Font("Microsoft Sans Serif", 11.0!)
+        Me.NameLabel.Location = New System.Drawing.Point(41, 77)
         Me.NameLabel.Name = "NameLabel"
-        Me.NameLabel.Size = New System.Drawing.Size(51, 20)
+        Me.NameLabel.Size = New System.Drawing.Size(48, 18)
         Me.NameLabel.TabIndex = 5
         Me.NameLabel.Text = "Name"
         '
         'DNameLabel
         '
         Me.DNameLabel.AutoSize = True
-        Me.DNameLabel.Font = New System.Drawing.Font("Microsoft Sans Serif", 12.0!, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, CType(0, Byte))
-        Me.DNameLabel.Location = New System.Drawing.Point(228, 91)
+        Me.DNameLabel.Font = New System.Drawing.Font("Microsoft Sans Serif", 11.0!)
+        Me.DNameLabel.Location = New System.Drawing.Point(123, 77)
         Me.DNameLabel.Name = "DNameLabel"
-        Me.DNameLabel.Size = New System.Drawing.Size(35, 20)
+        Me.DNameLabel.Size = New System.Drawing.Size(32, 18)
         Me.DNameLabel.TabIndex = 6
         Me.DNameLabel.Text = "abc"
         '
         'EmailLabel
         '
         Me.EmailLabel.AutoSize = True
-        Me.EmailLabel.Font = New System.Drawing.Font("Microsoft Sans Serif", 11.25!, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, CType(0, Byte))
-        Me.EmailLabel.Location = New System.Drawing.Point(440, 93)
+        Me.EmailLabel.Font = New System.Drawing.Font("Microsoft Sans Serif", 11.0!)
+        Me.EmailLabel.Location = New System.Drawing.Point(40, 113)
         Me.EmailLabel.Name = "EmailLabel"
         Me.EmailLabel.Size = New System.Drawing.Size(45, 18)
         Me.EmailLabel.TabIndex = 7
@@ -154,29 +153,19 @@ Partial Class Account
         'DEmailLabel
         '
         Me.DEmailLabel.AutoSize = True
-        Me.DEmailLabel.Font = New System.Drawing.Font("Microsoft Sans Serif", 12.0!, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, CType(0, Byte))
-        Me.DEmailLabel.Location = New System.Drawing.Point(532, 91)
+        Me.DEmailLabel.Font = New System.Drawing.Font("Microsoft Sans Serif", 11.0!)
+        Me.DEmailLabel.Location = New System.Drawing.Point(123, 113)
         Me.DEmailLabel.Name = "DEmailLabel"
-        Me.DEmailLabel.Size = New System.Drawing.Size(35, 20)
+        Me.DEmailLabel.Size = New System.Drawing.Size(32, 18)
         Me.DEmailLabel.TabIndex = 8
         Me.DEmailLabel.Text = "bcd"
         '
-        'SearchButton
-        '
-        Me.SearchButton.Font = New System.Drawing.Font("Microsoft Sans Serif", 12.0!, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, CType(0, Byte))
-        Me.SearchButton.Location = New System.Drawing.Point(655, 31)
-        Me.SearchButton.Name = "SearchButton"
-        Me.SearchButton.Size = New System.Drawing.Size(90, 31)
-        Me.SearchButton.TabIndex = 9
-        Me.SearchButton.Text = "Search "
-        Me.SearchButton.UseVisualStyleBackColor = True
-        '
         'LogoutButton
         '
-        Me.LogoutButton.Font = New System.Drawing.Font("Microsoft Sans Serif", 12.0!, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, CType(0, Byte))
-        Me.LogoutButton.Location = New System.Drawing.Point(655, 91)
+        Me.LogoutButton.Font = New System.Drawing.Font("Microsoft Sans Serif", 11.0!)
+        Me.LogoutButton.Location = New System.Drawing.Point(664, 392)
         Me.LogoutButton.Name = "LogoutButton"
-        Me.LogoutButton.Size = New System.Drawing.Size(90, 31)
+        Me.LogoutButton.Size = New System.Drawing.Size(90, 30)
         Me.LogoutButton.TabIndex = 10
         Me.LogoutButton.Text = "Logout "
         Me.LogoutButton.UseVisualStyleBackColor = True
@@ -186,9 +175,8 @@ Partial Class Account
         Me.AutoScaleDimensions = New System.Drawing.SizeF(6.0!, 13.0!)
         Me.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font
         Me.BackColor = System.Drawing.SystemColors.ButtonFace
-        Me.ClientSize = New System.Drawing.Size(784, 461)
+        Me.ClientSize = New System.Drawing.Size(784, 462)
         Me.Controls.Add(Me.LogoutButton)
-        Me.Controls.Add(Me.SearchButton)
         Me.Controls.Add(Me.DEmailLabel)
         Me.Controls.Add(Me.EmailLabel)
         Me.Controls.Add(Me.DNameLabel)
@@ -223,6 +211,5 @@ Partial Class Account
     Friend WithEvents Series As ColumnHeader
     Friend WithEvents ISBN As ColumnHeader
     Friend WithEvents Subject As ColumnHeader
-    Friend WithEvents SearchButton As Button
     Friend WithEvents LogoutButton As Button
 End Class
