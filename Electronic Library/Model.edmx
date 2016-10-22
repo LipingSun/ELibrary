@@ -1,0 +1,246 @@
+﻿<?xml version="1.0" encoding="utf-8"?>
+<edmx:Edmx Version="3.0" xmlns:edmx="http://schemas.microsoft.com/ado/2009/11/edmx">
+  <!-- EF Runtime content -->
+  <edmx:Runtime>
+    <!-- SSDL content -->
+    <edmx:StorageModels>
+      <Schema Namespace="ELibraryModel.Store" Provider="System.Data.SQLite.EF6" ProviderManifestToken="data source=&quot;D:\Coding\VS Projects\Electronic Library\ELibrary.db&quot;" Alias="Self" xmlns:store="http://schemas.microsoft.com/ado/2007/12/edm/EntityStoreSchemaGenerator" xmlns:customannotation="http://schemas.microsoft.com/ado/2013/11/edm/customannotation" xmlns="http://schemas.microsoft.com/ado/2009/11/edm/ssdl">
+        <EntityType Name="Checkout">
+          <Key>
+            <PropertyRef Name="CheckoutID" />
+          </Key>
+          <Property Name="CheckoutID" Type="nvarchar" MaxLength="2147483647" Nullable="false" />
+          <Property Name="ResourceID" Type="nvarchar" MaxLength="2147483647" />
+          <Property Name="MemberID" Type="nvarchar" MaxLength="2147483647" />
+          <Property Name="CheckOutDate" Type="nvarchar" MaxLength="2147483647" />
+          <Property Name="ReturnDate" Type="nvarchar" MaxLength="2147483647" />
+        </EntityType>
+        <EntityType Name="Member">
+          <Key>
+            <PropertyRef Name="MemberID" />
+          </Key>
+          <Property Name="MemberID" Type="nvarchar" MaxLength="2147483647" Nullable="false" />
+          <Property Name="FirstName" Type="nvarchar" MaxLength="2147483647" />
+          <Property Name="LastName" Type="nvarchar" MaxLength="2147483647" />
+          <Property Name="StreetAddress" Type="nvarchar" MaxLength="2147483647" />
+          <Property Name="City" Type="nvarchar" MaxLength="2147483647" />
+          <Property Name="State" Type="nvarchar" MaxLength="2147483647" />
+          <Property Name="ZipCode" Type="nvarchar" MaxLength="2147483647" />
+          <Property Name="Email" Type="nvarchar" MaxLength="2147483647" />
+          <Property Name="Password" Type="nvarchar" MaxLength="2147483647" />
+        </EntityType>
+        <EntityType Name="Resources">
+          <Key>
+            <PropertyRef Name="ResourceID" />
+          </Key>
+          <Property Name="ResourceID" Type="nvarchar" MaxLength="2147483647" Nullable="false" />
+          <Property Name="Title" Type="nvarchar" MaxLength="2147483647" />
+          <Property Name="AuthorLast" Type="nvarchar" MaxLength="2147483647" />
+          <Property Name="AuthorFirst" Type="nvarchar" MaxLength="2147483647" />
+          <Property Name="AuthorMiddle" Type="nvarchar" MaxLength="2147483647" />
+          <Property Name="PublicationDate" Type="nvarchar" MaxLength="2147483647" />
+          <Property Name="Series" Type="nvarchar" MaxLength="2147483647" />
+          <Property Name="ISBN" Type="nvarchar" MaxLength="2147483647" />
+          <Property Name="CheckOutPeriod" Type="nvarchar" MaxLength="2147483647" />
+          <Property Name="Subject_1" Type="nvarchar" MaxLength="2147483647" />
+          <Property Name="Subject_2" Type="nvarchar" MaxLength="2147483647" />
+          <Property Name="BookInfo" Type="nvarchar" MaxLength="2147483647" />
+        </EntityType>
+        <Association Name="FK_Checkout_0_0">
+          <End Role="Member" Type="Self.Member" Multiplicity="0..1" />
+          <End Role="Checkout" Type="Self.Checkout" Multiplicity="*" />
+          <ReferentialConstraint>
+            <Principal Role="Member">
+              <PropertyRef Name="MemberID" />
+            </Principal>
+            <Dependent Role="Checkout">
+              <PropertyRef Name="MemberID" />
+            </Dependent>
+          </ReferentialConstraint>
+        </Association>
+        <Association Name="FK_Checkout_1_0">
+          <End Role="Resources" Type="Self.Resources" Multiplicity="0..1" />
+          <End Role="Checkout" Type="Self.Checkout" Multiplicity="*" />
+          <ReferentialConstraint>
+            <Principal Role="Resources">
+              <PropertyRef Name="ResourceID" />
+            </Principal>
+            <Dependent Role="Checkout">
+              <PropertyRef Name="ResourceID" />
+            </Dependent>
+          </ReferentialConstraint>
+        </Association>
+        <EntityContainer Name="ELibraryModelStoreContainer">
+          <EntitySet Name="Checkout" EntityType="Self.Checkout" store:Type="Tables" />
+          <EntitySet Name="Member" EntityType="Self.Member" store:Type="Tables" />
+          <EntitySet Name="Resources" EntityType="Self.Resources" store:Type="Tables" />
+          <AssociationSet Name="FK_Checkout_0_0" Association="Self.FK_Checkout_0_0">
+            <End Role="Member" EntitySet="Member" />
+            <End Role="Checkout" EntitySet="Checkout" />
+          </AssociationSet>
+          <AssociationSet Name="FK_Checkout_1_0" Association="Self.FK_Checkout_1_0">
+            <End Role="Resources" EntitySet="Resources" />
+            <End Role="Checkout" EntitySet="Checkout" />
+          </AssociationSet>
+        </EntityContainer>
+      </Schema>
+    </edmx:StorageModels>
+    <!-- CSDL content -->
+    <edmx:ConceptualModels>
+      <Schema Namespace="ELibraryModel" Alias="Self" annotation:UseStrongSpatialTypes="false" xmlns:annotation="http://schemas.microsoft.com/ado/2009/02/edm/annotation" xmlns:customannotation="http://schemas.microsoft.com/ado/2013/11/edm/customannotation" xmlns="http://schemas.microsoft.com/ado/2009/11/edm">
+        <EntityType Name="Checkout">
+          <Key>
+            <PropertyRef Name="CheckoutID" />
+          </Key>
+          <Property Name="CheckoutID" Type="String" MaxLength="2147483647" FixedLength="false" Unicode="true" Nullable="false" />
+          <Property Name="ResourceID" Type="String" MaxLength="2147483647" FixedLength="false" Unicode="true" />
+          <Property Name="MemberID" Type="String" MaxLength="2147483647" FixedLength="false" Unicode="true" />
+          <Property Name="CheckOutDate" Type="String" MaxLength="2147483647" FixedLength="false" Unicode="true" />
+          <Property Name="ReturnDate" Type="String" MaxLength="2147483647" FixedLength="false" Unicode="true" />
+          <NavigationProperty Name="Member" Relationship="Self.FK_Checkout_0_0" FromRole="Checkout" ToRole="Member" />
+          <NavigationProperty Name="Resource" Relationship="Self.FK_Checkout_1_0" FromRole="Checkout" ToRole="Resources" />
+        </EntityType>
+        <EntityType Name="Member">
+          <Key>
+            <PropertyRef Name="MemberID" />
+          </Key>
+          <Property Name="MemberID" Type="String" MaxLength="2147483647" FixedLength="false" Unicode="true" Nullable="false" />
+          <Property Name="FirstName" Type="String" MaxLength="2147483647" FixedLength="false" Unicode="true" />
+          <Property Name="LastName" Type="String" MaxLength="2147483647" FixedLength="false" Unicode="true" />
+          <Property Name="StreetAddress" Type="String" MaxLength="2147483647" FixedLength="false" Unicode="true" />
+          <Property Name="City" Type="String" MaxLength="2147483647" FixedLength="false" Unicode="true" />
+          <Property Name="State" Type="String" MaxLength="2147483647" FixedLength="false" Unicode="true" />
+          <Property Name="ZipCode" Type="String" MaxLength="2147483647" FixedLength="false" Unicode="true" />
+          <Property Name="Email" Type="String" MaxLength="2147483647" FixedLength="false" Unicode="true" />
+          <Property Name="Password" Type="String" MaxLength="2147483647" FixedLength="false" Unicode="true" />
+          <NavigationProperty Name="Checkouts" Relationship="Self.FK_Checkout_0_0" FromRole="Member" ToRole="Checkout" />
+        </EntityType>
+        <EntityType Name="Resource">
+          <Key>
+            <PropertyRef Name="ResourceID" />
+          </Key>
+          <Property Name="ResourceID" Type="String" MaxLength="2147483647" FixedLength="false" Unicode="true" Nullable="false" />
+          <Property Name="Title" Type="String" MaxLength="2147483647" FixedLength="false" Unicode="true" />
+          <Property Name="AuthorLast" Type="String" MaxLength="2147483647" FixedLength="false" Unicode="true" />
+          <Property Name="AuthorFirst" Type="String" MaxLength="2147483647" FixedLength="false" Unicode="true" />
+          <Property Name="AuthorMiddle" Type="String" MaxLength="2147483647" FixedLength="false" Unicode="true" />
+          <Property Name="PublicationDate" Type="String" MaxLength="2147483647" FixedLength="false" Unicode="true" />
+          <Property Name="Series" Type="String" MaxLength="2147483647" FixedLength="false" Unicode="true" />
+          <Property Name="ISBN" Type="String" MaxLength="2147483647" FixedLength="false" Unicode="true" />
+          <Property Name="CheckOutPeriod" Type="String" MaxLength="2147483647" FixedLength="false" Unicode="true" />
+          <Property Name="Subject_1" Type="String" MaxLength="2147483647" FixedLength="false" Unicode="true" />
+          <Property Name="Subject_2" Type="String" MaxLength="2147483647" FixedLength="false" Unicode="true" />
+          <Property Name="BookInfo" Type="String" MaxLength="2147483647" FixedLength="false" Unicode="true" />
+          <NavigationProperty Name="Checkouts" Relationship="Self.FK_Checkout_1_0" FromRole="Resources" ToRole="Checkout" />
+        </EntityType>
+        <Association Name="FK_Checkout_0_0">
+          <End Role="Member" Type="Self.Member" Multiplicity="0..1" />
+          <End Role="Checkout" Type="Self.Checkout" Multiplicity="*" />
+          <ReferentialConstraint>
+            <Principal Role="Member">
+              <PropertyRef Name="MemberID" />
+            </Principal>
+            <Dependent Role="Checkout">
+              <PropertyRef Name="MemberID" />
+            </Dependent>
+          </ReferentialConstraint>
+        </Association>
+        <Association Name="FK_Checkout_1_0">
+          <End Role="Resources" Type="Self.Resource" Multiplicity="0..1" />
+          <End Role="Checkout" Type="Self.Checkout" Multiplicity="*" />
+          <ReferentialConstraint>
+            <Principal Role="Resources">
+              <PropertyRef Name="ResourceID" />
+            </Principal>
+            <Dependent Role="Checkout">
+              <PropertyRef Name="ResourceID" />
+            </Dependent>
+          </ReferentialConstraint>
+        </Association>
+        <EntityContainer Name="ELibraryEntities" annotation:LazyLoadingEnabled="true">
+          <EntitySet Name="Checkouts" EntityType="Self.Checkout" />
+          <EntitySet Name="Members" EntityType="Self.Member" />
+          <EntitySet Name="Resources" EntityType="Self.Resource" />
+          <AssociationSet Name="FK_Checkout_0_0" Association="Self.FK_Checkout_0_0">
+            <End Role="Member" EntitySet="Members" />
+            <End Role="Checkout" EntitySet="Checkouts" />
+          </AssociationSet>
+          <AssociationSet Name="FK_Checkout_1_0" Association="Self.FK_Checkout_1_0">
+            <End Role="Resources" EntitySet="Resources" />
+            <End Role="Checkout" EntitySet="Checkouts" />
+          </AssociationSet>
+        </EntityContainer>
+      </Schema>
+    </edmx:ConceptualModels>
+    <!-- C-S mapping content -->
+    <edmx:Mappings>
+      <Mapping Space="C-S" xmlns="http://schemas.microsoft.com/ado/2009/11/mapping/cs">
+        <EntityContainerMapping StorageEntityContainer="ELibraryModelStoreContainer" CdmEntityContainer="ELibraryEntities">
+          <EntitySetMapping Name="Checkouts">
+            <EntityTypeMapping TypeName="ELibraryModel.Checkout">
+              <MappingFragment StoreEntitySet="Checkout">
+                <ScalarProperty Name="CheckoutID" ColumnName="CheckoutID" />
+                <ScalarProperty Name="ResourceID" ColumnName="ResourceID" />
+                <ScalarProperty Name="MemberID" ColumnName="MemberID" />
+                <ScalarProperty Name="CheckOutDate" ColumnName="CheckOutDate" />
+                <ScalarProperty Name="ReturnDate" ColumnName="ReturnDate" />
+              </MappingFragment>
+            </EntityTypeMapping>
+          </EntitySetMapping>
+          <EntitySetMapping Name="Members">
+            <EntityTypeMapping TypeName="ELibraryModel.Member">
+              <MappingFragment StoreEntitySet="Member">
+                <ScalarProperty Name="MemberID" ColumnName="MemberID" />
+                <ScalarProperty Name="FirstName" ColumnName="FirstName" />
+                <ScalarProperty Name="LastName" ColumnName="LastName" />
+                <ScalarProperty Name="StreetAddress" ColumnName="StreetAddress" />
+                <ScalarProperty Name="City" ColumnName="City" />
+                <ScalarProperty Name="State" ColumnName="State" />
+                <ScalarProperty Name="ZipCode" ColumnName="ZipCode" />
+                <ScalarProperty Name="Email" ColumnName="Email" />
+                <ScalarProperty Name="Password" ColumnName="Password" />
+              </MappingFragment>
+            </EntityTypeMapping>
+          </EntitySetMapping>
+          <EntitySetMapping Name="Resources">
+            <EntityTypeMapping TypeName="ELibraryModel.Resource">
+              <MappingFragment StoreEntitySet="Resources">
+                <ScalarProperty Name="ResourceID" ColumnName="ResourceID" />
+                <ScalarProperty Name="Title" ColumnName="Title" />
+                <ScalarProperty Name="AuthorLast" ColumnName="AuthorLast" />
+                <ScalarProperty Name="AuthorFirst" ColumnName="AuthorFirst" />
+                <ScalarProperty Name="AuthorMiddle" ColumnName="AuthorMiddle" />
+                <ScalarProperty Name="PublicationDate" ColumnName="PublicationDate" />
+                <ScalarProperty Name="Series" ColumnName="Series" />
+                <ScalarProperty Name="ISBN" ColumnName="ISBN" />
+                <ScalarProperty Name="CheckOutPeriod" ColumnName="CheckOutPeriod" />
+                <ScalarProperty Name="Subject_1" ColumnName="Subject_1" />
+                <ScalarProperty Name="Subject_2" ColumnName="Subject_2" />
+                <ScalarProperty Name="BookInfo" ColumnName="BookInfo" />
+              </MappingFragment>
+            </EntityTypeMapping>
+          </EntitySetMapping>
+        </EntityContainerMapping>
+      </Mapping>
+    </edmx:Mappings>
+  </edmx:Runtime>
+  <!-- EF Designer content (DO NOT EDIT MANUALLY BELOW HERE) -->
+  <Designer xmlns="http://schemas.microsoft.com/ado/2009/11/edmx">
+    <Connection>
+      <DesignerInfoPropertySet>
+        <DesignerProperty Name="MetadataArtifactProcessing" Value="EmbedInOutputAssembly" />
+      </DesignerInfoPropertySet>
+    </Connection>
+    <Options>
+      <DesignerInfoPropertySet>
+        <DesignerProperty Name="ValidateOnBuild" Value="true" />
+        <DesignerProperty Name="EnablePluralization" Value="true" />
+        <DesignerProperty Name="IncludeForeignKeysInModel" Value="true" />
+        <DesignerProperty Name="UseLegacyProvider" Value="false" />
+        <DesignerProperty Name="CodeGenerationStrategy" Value="None" />
+      </DesignerInfoPropertySet>
+    </Options>
+    <!-- Diagram content (shape and connector positions) -->
+    <Diagrams></Diagrams>
+  </Designer>
+</edmx:Edmx>
