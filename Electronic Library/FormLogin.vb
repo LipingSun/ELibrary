@@ -1,4 +1,4 @@
-﻿Public Class Login
+﻿Public Class LoginForm
 
     Private Sub LoginButton_Click(sender As Object, e As EventArgs) Handles LoginButton.Click
         If UserNameTextBox.Text = String.Empty Or PasswordTextBox.Text = String.Empty Then
@@ -12,6 +12,8 @@
                 MessageBox.Show("login unsuccessful - password incorrect")
             Else
                 MessageBox.Show("Login Sucessful!")
+                Me.Visible = False
+                SearchForm.ShowDialog()
             End If
         End If
     End Sub

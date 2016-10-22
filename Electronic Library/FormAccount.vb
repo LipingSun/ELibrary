@@ -1,4 +1,4 @@
-﻿Public Class Account
+﻿Public Class AccountForm
 
     Private Sub ReturnButton_Click(sender As Object, e As EventArgs) Handles ReturnButton.Click
 

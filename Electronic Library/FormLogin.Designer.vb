@@ -1,5 +1,5 @@
 ﻿<Global.Microsoft.VisualBasic.CompilerServices.DesignerGenerated()> _
-Partial Class Login
+Partial Class LoginForm
     Inherits System.Windows.Forms.Form
 
     'Form overrides dispose to clean up the component list.
@@ -22,7 +22,7 @@ Partial Class Login
     'Do not modify it using the code editor.
     <System.Diagnostics.DebuggerStepThrough()> _
     Private Sub InitializeComponent()
-        Dim resources As System.ComponentModel.ComponentResourceManager = New System.ComponentModel.ComponentResourceManager(GetType(Login))
+        Dim resources As System.ComponentModel.ComponentResourceManager = New System.ComponentModel.ComponentResourceManager(GetType(LoginForm))
         Me.UserNameLabel = New System.Windows.Forms.Label()
         Me.UserNameTextBox = New System.Windows.Forms.TextBox()
         Me.PasswordLabel = New System.Windows.Forms.Label()
@@ -53,6 +53,7 @@ Partial Class Login
         Me.UserNameTextBox.Name = "UserNameTextBox"
         Me.UserNameTextBox.Size = New System.Drawing.Size(150, 20)
         Me.UserNameTextBox.TabIndex = 1
+        Me.UserNameTextBox.Text = "nora.chang@sbcglobal.net"
         Me.UserNameTextBox.UseWaitCursor = True
         '
         'PasswordLabel
@@ -73,6 +74,8 @@ Partial Class Login
         Me.PasswordTextBox.Name = "PasswordTextBox"
         Me.PasswordTextBox.Size = New System.Drawing.Size(150, 20)
         Me.PasswordTextBox.TabIndex = 3
+        Me.PasswordTextBox.Text = "nora"
+        Me.PasswordTextBox.UseSystemPasswordChar = True
         Me.PasswordTextBox.UseWaitCursor = True
         '
         'LoginButton
@@ -133,7 +136,7 @@ Partial Class Login
         Me.CloseButton.UseVisualStyleBackColor = True
         Me.CloseButton.UseWaitCursor = True
         '
-        'Login
+        'LoginForm
         '
         Me.AutoScaleDimensions = New System.Drawing.SizeF(6.0!, 13.0!)
         Me.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font
@@ -151,7 +154,7 @@ Partial Class Login
         Me.MaximizeBox = False
         Me.MaximumSize = New System.Drawing.Size(800, 500)
         Me.MinimumSize = New System.Drawing.Size(800, 500)
-        Me.Name = "Login"
+        Me.Name = "LoginForm"
         Me.Text = "Login"
         Me.UseWaitCursor = True
         CType(Me.LoginPictureBox, System.ComponentModel.ISupportInitialize).EndInit()

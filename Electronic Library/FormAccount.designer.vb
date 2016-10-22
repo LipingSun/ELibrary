@@ -1,5 +1,5 @@
 ﻿<Global.Microsoft.VisualBasic.CompilerServices.DesignerGenerated()> _
-Partial Class Account
+Partial Class AccountForm
     Inherits System.Windows.Forms.Form
 
     'Form overrides dispose to clean up the component list.
@@ -170,12 +170,12 @@ Partial Class Account
         Me.CloseButton.Text = "Close"
         Me.CloseButton.UseVisualStyleBackColor = True
         '
-        'Account
+        'AccountForm
         '
         Me.AutoScaleDimensions = New System.Drawing.SizeF(6.0!, 13.0!)
         Me.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font
         Me.BackColor = System.Drawing.SystemColors.ButtonFace
-        Me.ClientSize = New System.Drawing.Size(784, 461)
+        Me.ClientSize = New System.Drawing.Size(784, 462)
         Me.Controls.Add(Me.CloseButton)
         Me.Controls.Add(Me.DEmailLabel)
         Me.Controls.Add(Me.EmailLabel)
@@ -189,7 +189,7 @@ Partial Class Account
         Me.MaximizeBox = False
         Me.MaximumSize = New System.Drawing.Size(800, 500)
         Me.MinimumSize = New System.Drawing.Size(800, 500)
-        Me.Name = "Account"
+        Me.Name = "AccountForm"
         Me.Text = "Account"
         Me.ResumeLayout(False)
         Me.PerformLayout()

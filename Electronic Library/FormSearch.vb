@@ -1,4 +1,4 @@
-﻿Public Class Search
+﻿Public Class SearchForm
 
     Private Sub Delete1Button_Click(sender As Object, e As EventArgs)
 

@@ -1,5 +1,5 @@
 ﻿<Global.Microsoft.VisualBasic.CompilerServices.DesignerGenerated()>
-Partial Class Search
+Partial Class SearchForm
     Inherits System.Windows.Forms.Form
 
     'Form overrides dispose to clean up the component list.
@@ -191,7 +191,7 @@ Partial Class Search
         Me.ResultLabel.TabIndex = 17
         Me.ResultLabel.Text = "Result"
         '
-        'Search
+        'SearchForm
         '
         Me.AutoScaleDimensions = New System.Drawing.SizeF(6.0!, 13.0!)
         Me.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font
@@ -211,7 +211,7 @@ Partial Class Search
         Me.MaximizeBox = False
         Me.MaximumSize = New System.Drawing.Size(800, 500)
         Me.MinimumSize = New System.Drawing.Size(800, 500)
-        Me.Name = "Search"
+        Me.Name = "SearchForm"
         Me.Text = "Search"
         Me.ResumeLayout(False)
         Me.PerformLayout()
