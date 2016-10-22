@@ -37,7 +37,7 @@ Partial Class Account
         Me.DNameLabel = New System.Windows.Forms.Label()
         Me.EmailLabel = New System.Windows.Forms.Label()
         Me.DEmailLabel = New System.Windows.Forms.Label()
-        Me.LogoutButton = New System.Windows.Forms.Button()
+        Me.CloseButton = New System.Windows.Forms.Button()
         Me.SuspendLayout()
         '
         'AccountLabel
@@ -160,23 +160,23 @@ Partial Class Account
         Me.DEmailLabel.TabIndex = 8
         Me.DEmailLabel.Text = "bcd"
         '
-        'LogoutButton
+        'CloseButton
         '
-        Me.LogoutButton.Font = New System.Drawing.Font("Microsoft Sans Serif", 11.0!)
-        Me.LogoutButton.Location = New System.Drawing.Point(664, 392)
-        Me.LogoutButton.Name = "LogoutButton"
-        Me.LogoutButton.Size = New System.Drawing.Size(90, 30)
-        Me.LogoutButton.TabIndex = 10
-        Me.LogoutButton.Text = "Logout "
-        Me.LogoutButton.UseVisualStyleBackColor = True
+        Me.CloseButton.Font = New System.Drawing.Font("Microsoft Sans Serif", 11.0!)
+        Me.CloseButton.Location = New System.Drawing.Point(664, 392)
+        Me.CloseButton.Name = "CloseButton"
+        Me.CloseButton.Size = New System.Drawing.Size(90, 30)
+        Me.CloseButton.TabIndex = 10
+        Me.CloseButton.Text = "Close"
+        Me.CloseButton.UseVisualStyleBackColor = True
         '
         'Account
         '
         Me.AutoScaleDimensions = New System.Drawing.SizeF(6.0!, 13.0!)
         Me.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font
         Me.BackColor = System.Drawing.SystemColors.ButtonFace
-        Me.ClientSize = New System.Drawing.Size(784, 462)
-        Me.Controls.Add(Me.LogoutButton)
+        Me.ClientSize = New System.Drawing.Size(784, 461)
+        Me.Controls.Add(Me.CloseButton)
         Me.Controls.Add(Me.DEmailLabel)
         Me.Controls.Add(Me.EmailLabel)
         Me.Controls.Add(Me.DNameLabel)
@@ -211,5 +211,5 @@ Partial Class Account
     Friend WithEvents Series As ColumnHeader
     Friend WithEvents ISBN As ColumnHeader
     Friend WithEvents Subject As ColumnHeader
-    Friend WithEvents LogoutButton As Button
+    Friend WithEvents CloseButton As Button
 End Class

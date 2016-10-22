@@ -112,10 +112,10 @@ Partial Class Login
         'Label1
         '
         Me.Label1.AutoSize = True
-        Me.Label1.BackColor = System.Drawing.Color.Transparent
+        Me.Label1.BackColor = System.Drawing.Color.LightSteelBlue
         Me.Label1.Font = New System.Drawing.Font("Times New Roman", 12.0!, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, CType(0, Byte))
         Me.Label1.ForeColor = System.Drawing.SystemColors.ActiveCaptionText
-        Me.Label1.Location = New System.Drawing.Point(135, 59)
+        Me.Label1.Location = New System.Drawing.Point(123, 48)
         Me.Label1.Name = "Label1"
         Me.Label1.Size = New System.Drawing.Size(510, 19)
         Me.Label1.TabIndex = 7
@@ -138,7 +138,7 @@ Partial Class Login
         Me.AutoScaleDimensions = New System.Drawing.SizeF(6.0!, 13.0!)
         Me.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font
         Me.BackColor = System.Drawing.SystemColors.ButtonFace
-        Me.ClientSize = New System.Drawing.Size(784, 462)
+        Me.ClientSize = New System.Drawing.Size(784, 461)
         Me.Controls.Add(Me.CloseButton)
         Me.Controls.Add(Me.Label1)
         Me.Controls.Add(Me.NameLabel)
