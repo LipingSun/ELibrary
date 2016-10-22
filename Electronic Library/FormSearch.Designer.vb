@@ -24,7 +24,7 @@ Partial Class SearchForm
     Private Sub InitializeComponent()
         Me.SearchLabel = New System.Windows.Forms.Label()
         Me.KeywordComboBox = New System.Windows.Forms.ComboBox()
-        Me.LikeComboBox = New System.Windows.Forms.ComboBox()
+        Me.EqualOrLikeComboBox = New System.Windows.Forms.ComboBox()
         Me.SearchResourceListView = New System.Windows.Forms.ListView()
         Me.Title = CType(New System.Windows.Forms.ColumnHeader(), System.Windows.Forms.ColumnHeader)
         Me.Author = CType(New System.Windows.Forms.ColumnHeader(), System.Windows.Forms.ColumnHeader)
@@ -38,7 +38,7 @@ Partial Class SearchForm
         Me.LogoutButton = New System.Windows.Forms.Button()
         Me.AccountButton = New System.Windows.Forms.Button()
         Me.CheckOutButton = New System.Windows.Forms.Button()
-        Me.UserInputTextBox1 = New System.Windows.Forms.TextBox()
+        Me.KeywordTextBox = New System.Windows.Forms.TextBox()
         Me.ClearButton = New System.Windows.Forms.Button()
         Me.ResultLabel = New System.Windows.Forms.Label()
         Me.SuspendLayout()
@@ -64,21 +64,23 @@ Partial Class SearchForm
         Me.KeywordComboBox.Size = New System.Drawing.Size(95, 26)
         Me.KeywordComboBox.TabIndex = 2
         '
-        'LikeComboBox
+        'EqualOrLikeComboBox
         '
-        Me.LikeComboBox.DropDownStyle = System.Windows.Forms.ComboBoxStyle.DropDownList
-        Me.LikeComboBox.Font = New System.Drawing.Font("Microsoft Sans Serif", 11.0!)
-        Me.LikeComboBox.FormattingEnabled = True
-        Me.LikeComboBox.Items.AddRange(New Object() {"=", "like"})
-        Me.LikeComboBox.Location = New System.Drawing.Point(158, 91)
-        Me.LikeComboBox.Name = "LikeComboBox"
-        Me.LikeComboBox.Size = New System.Drawing.Size(50, 26)
-        Me.LikeComboBox.TabIndex = 4
+        Me.EqualOrLikeComboBox.DropDownStyle = System.Windows.Forms.ComboBoxStyle.DropDownList
+        Me.EqualOrLikeComboBox.Font = New System.Drawing.Font("Microsoft Sans Serif", 11.0!)
+        Me.EqualOrLikeComboBox.FormattingEnabled = True
+        Me.EqualOrLikeComboBox.Items.AddRange(New Object() {"=", "like"})
+        Me.EqualOrLikeComboBox.Location = New System.Drawing.Point(158, 91)
+        Me.EqualOrLikeComboBox.Name = "EqualOrLikeComboBox"
+        Me.EqualOrLikeComboBox.Size = New System.Drawing.Size(50, 26)
+        Me.EqualOrLikeComboBox.TabIndex = 4
         '
         'SearchResourceListView
         '
         Me.SearchResourceListView.Columns.AddRange(New System.Windows.Forms.ColumnHeader() {Me.Title, Me.Author, Me.PublicationDate, Me.Series, Me.ISBN, Me.Subject, Me.CheckOutPeriod, Me.Avaibility})
+        Me.SearchResourceListView.FullRowSelect = True
         Me.SearchResourceListView.Location = New System.Drawing.Point(43, 200)
+        Me.SearchResourceListView.MultiSelect = False
         Me.SearchResourceListView.Name = "SearchResourceListView"
         Me.SearchResourceListView.Size = New System.Drawing.Size(593, 222)
         Me.SearchResourceListView.TabIndex = 10
@@ -163,13 +165,14 @@ Partial Class SearchForm
         Me.CheckOutButton.Text = "Check Out"
         Me.CheckOutButton.UseVisualStyleBackColor = True
         '
-        'UserInputTextBox1
+        'KeywordTextBox
         '
-        Me.UserInputTextBox1.Font = New System.Drawing.Font("Microsoft Sans Serif", 11.0!)
-        Me.UserInputTextBox1.Location = New System.Drawing.Point(233, 91)
-        Me.UserInputTextBox1.Name = "UserInputTextBox1"
-        Me.UserInputTextBox1.Size = New System.Drawing.Size(286, 24)
-        Me.UserInputTextBox1.TabIndex = 15
+        Me.KeywordTextBox.Font = New System.Drawing.Font("Microsoft Sans Serif", 11.0!)
+        Me.KeywordTextBox.Location = New System.Drawing.Point(233, 91)
+        Me.KeywordTextBox.Name = "KeywordTextBox"
+        Me.KeywordTextBox.Size = New System.Drawing.Size(286, 24)
+        Me.KeywordTextBox.TabIndex = 15
+        Me.KeywordTextBox.Text = "Unbroken: A World War II Story of Survival, Resilience, and Redemption"
         '
         'ClearButton
         '
@@ -199,13 +202,13 @@ Partial Class SearchForm
         Me.ClientSize = New System.Drawing.Size(784, 462)
         Me.Controls.Add(Me.ResultLabel)
         Me.Controls.Add(Me.ClearButton)
-        Me.Controls.Add(Me.UserInputTextBox1)
+        Me.Controls.Add(Me.KeywordTextBox)
         Me.Controls.Add(Me.CheckOutButton)
         Me.Controls.Add(Me.AccountButton)
         Me.Controls.Add(Me.LogoutButton)
         Me.Controls.Add(Me.SearchButton)
         Me.Controls.Add(Me.SearchResourceListView)
-        Me.Controls.Add(Me.LikeComboBox)
+        Me.Controls.Add(Me.EqualOrLikeComboBox)
         Me.Controls.Add(Me.KeywordComboBox)
         Me.Controls.Add(Me.SearchLabel)
         Me.MaximizeBox = False
@@ -220,7 +223,7 @@ Partial Class SearchForm
 
     Friend WithEvents SearchLabel As Label
     Friend WithEvents KeywordComboBox As ComboBox
-    Friend WithEvents LikeComboBox As ComboBox
+    Friend WithEvents EqualOrLikeComboBox As ComboBox
     Friend WithEvents SearchResourceListView As ListView
     Friend WithEvents Title As ColumnHeader
     Friend WithEvents Author As ColumnHeader
@@ -234,7 +237,7 @@ Partial Class SearchForm
     Friend WithEvents LogoutButton As Button
     Friend WithEvents AccountButton As Button
     Friend WithEvents CheckOutButton As Button
-    Friend WithEvents UserInputTextBox1 As TextBox
+    Friend WithEvents KeywordTextBox As TextBox
     Friend WithEvents ClearButton As Button
     Friend WithEvents ResultLabel As Label
 End Class
