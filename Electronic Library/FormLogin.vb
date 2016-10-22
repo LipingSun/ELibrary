@@ -11,7 +11,7 @@
             ElseIf member.Password <> PasswordTextBox.Text Then
                 MessageBox.Show("login unsuccessful - password incorrect")
             Else
-                MessageBox.Show("Login Sucessful!")
+                '                MessageBox.Show("Login Sucessful!")
                 Me.Visible = False
                 SearchForm.ShowDialog()
             End If

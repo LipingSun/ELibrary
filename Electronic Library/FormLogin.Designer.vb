@@ -38,6 +38,7 @@ Partial Class LoginForm
         'UserNameLabel
         '
         Me.UserNameLabel.AutoSize = True
+        Me.UserNameLabel.Cursor = System.Windows.Forms.Cursors.Default
         Me.UserNameLabel.Font = New System.Drawing.Font("Microsoft Sans Serif", 11.0!)
         Me.UserNameLabel.ForeColor = System.Drawing.SystemColors.ActiveCaptionText
         Me.UserNameLabel.Location = New System.Drawing.Point(44, 423)
@@ -45,20 +46,20 @@ Partial Class LoginForm
         Me.UserNameLabel.Size = New System.Drawing.Size(45, 18)
         Me.UserNameLabel.TabIndex = 0
         Me.UserNameLabel.Text = "Email"
-        Me.UserNameLabel.UseWaitCursor = True
         '
         'UserNameTextBox
         '
+        Me.UserNameTextBox.Cursor = System.Windows.Forms.Cursors.IBeam
         Me.UserNameTextBox.Location = New System.Drawing.Point(95, 424)
         Me.UserNameTextBox.Name = "UserNameTextBox"
         Me.UserNameTextBox.Size = New System.Drawing.Size(150, 20)
         Me.UserNameTextBox.TabIndex = 1
         Me.UserNameTextBox.Text = "nora.chang@sbcglobal.net"
-        Me.UserNameTextBox.UseWaitCursor = True
         '
         'PasswordLabel
         '
         Me.PasswordLabel.AutoSize = True
+        Me.PasswordLabel.Cursor = System.Windows.Forms.Cursors.Default
         Me.PasswordLabel.Font = New System.Drawing.Font("Microsoft Sans Serif", 11.0!)
         Me.PasswordLabel.ForeColor = System.Drawing.SystemColors.ActiveCaptionText
         Me.PasswordLabel.Location = New System.Drawing.Point(272, 424)
@@ -66,20 +67,20 @@ Partial Class LoginForm
         Me.PasswordLabel.Size = New System.Drawing.Size(75, 18)
         Me.PasswordLabel.TabIndex = 2
         Me.PasswordLabel.Text = "Password"
-        Me.PasswordLabel.UseWaitCursor = True
         '
         'PasswordTextBox
         '
+        Me.PasswordTextBox.Cursor = System.Windows.Forms.Cursors.IBeam
         Me.PasswordTextBox.Location = New System.Drawing.Point(353, 424)
         Me.PasswordTextBox.Name = "PasswordTextBox"
         Me.PasswordTextBox.Size = New System.Drawing.Size(150, 20)
         Me.PasswordTextBox.TabIndex = 3
         Me.PasswordTextBox.Text = "nora"
         Me.PasswordTextBox.UseSystemPasswordChar = True
-        Me.PasswordTextBox.UseWaitCursor = True
         '
         'LoginButton
         '
+        Me.LoginButton.Cursor = System.Windows.Forms.Cursors.Default
         Me.LoginButton.Font = New System.Drawing.Font("Microsoft Sans Serif", 11.0!)
         Me.LoginButton.Location = New System.Drawing.Point(540, 417)
         Me.LoginButton.Name = "LoginButton"
@@ -87,10 +88,10 @@ Partial Class LoginForm
         Me.LoginButton.TabIndex = 4
         Me.LoginButton.Text = "Login"
         Me.LoginButton.UseVisualStyleBackColor = True
-        Me.LoginButton.UseWaitCursor = True
         '
         'LoginPictureBox
         '
+        Me.LoginPictureBox.Cursor = System.Windows.Forms.Cursors.Default
         Me.LoginPictureBox.Image = CType(resources.GetObject("LoginPictureBox.Image"), System.Drawing.Image)
         Me.LoginPictureBox.InitialImage = Nothing
         Me.LoginPictureBox.Location = New System.Drawing.Point(47, 48)
@@ -99,23 +100,23 @@ Partial Class LoginForm
         Me.LoginPictureBox.SizeMode = System.Windows.Forms.PictureBoxSizeMode.Zoom
         Me.LoginPictureBox.TabIndex = 5
         Me.LoginPictureBox.TabStop = False
-        Me.LoginPictureBox.UseWaitCursor = True
         '
         'NameLabel
         '
         Me.NameLabel.AutoSize = True
+        Me.NameLabel.Cursor = System.Windows.Forms.Cursors.Default
         Me.NameLabel.Font = New System.Drawing.Font("Times New Roman", 15.75!, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, CType(0, Byte))
         Me.NameLabel.Location = New System.Drawing.Point(44, 21)
         Me.NameLabel.Name = "NameLabel"
         Me.NameLabel.Size = New System.Drawing.Size(283, 24)
         Me.NameLabel.TabIndex = 6
         Me.NameLabel.Text = "Weclome to Electronic Library"
-        Me.NameLabel.UseWaitCursor = True
         '
         'Label1
         '
         Me.Label1.AutoSize = True
         Me.Label1.BackColor = System.Drawing.Color.LightSteelBlue
+        Me.Label1.Cursor = System.Windows.Forms.Cursors.Default
         Me.Label1.Font = New System.Drawing.Font("Times New Roman", 12.0!, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, CType(0, Byte))
         Me.Label1.ForeColor = System.Drawing.SystemColors.ActiveCaptionText
         Me.Label1.Location = New System.Drawing.Point(123, 48)
@@ -123,10 +124,10 @@ Partial Class LoginForm
         Me.Label1.Size = New System.Drawing.Size(510, 19)
         Me.Label1.TabIndex = 7
         Me.Label1.Text = "A collaboration between the City of San Jose and San Jose State University"
-        Me.Label1.UseWaitCursor = True
         '
         'CloseButton
         '
+        Me.CloseButton.Cursor = System.Windows.Forms.Cursors.Default
         Me.CloseButton.Font = New System.Drawing.Font("Microsoft Sans Serif", 11.0!)
         Me.CloseButton.Location = New System.Drawing.Point(647, 417)
         Me.CloseButton.Name = "CloseButton"
@@ -134,7 +135,6 @@ Partial Class LoginForm
         Me.CloseButton.TabIndex = 8
         Me.CloseButton.Text = "Close"
         Me.CloseButton.UseVisualStyleBackColor = True
-        Me.CloseButton.UseWaitCursor = True
         '
         'LoginForm
         '
@@ -151,12 +151,12 @@ Partial Class LoginForm
         Me.Controls.Add(Me.PasswordLabel)
         Me.Controls.Add(Me.UserNameTextBox)
         Me.Controls.Add(Me.UserNameLabel)
+        Me.Cursor = System.Windows.Forms.Cursors.Default
         Me.MaximizeBox = False
         Me.MaximumSize = New System.Drawing.Size(800, 500)
         Me.MinimumSize = New System.Drawing.Size(800, 500)
         Me.Name = "LoginForm"
         Me.Text = "Login"
-        Me.UseWaitCursor = True
         CType(Me.LoginPictureBox, System.ComponentModel.ISupportInitialize).EndInit()
         Me.ResumeLayout(False)
         Me.PerformLayout()
