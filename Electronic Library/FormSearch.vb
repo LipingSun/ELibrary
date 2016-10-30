@@ -6,7 +6,6 @@ Public Class SearchForm
 
     Private Sub FormSearch_Load(sender As Object, e As EventArgs) Handles MyBase.Load
         KeywordComboBox.SelectedIndex = 0
-        EqualOrLikeComboBox.SelectedIndex = 0
     End Sub
 
     Private Sub LogoutButton_Click(sender As Object, e As EventArgs) Handles LogoutButton.Click
@@ -21,7 +20,8 @@ Public Class SearchForm
             Return
         End If
 
-        Dim resources = db.Resources.Where(Function(r) r.Title = KeywordTextBox.Text)
+        Dim resources = db.Resources.SqlQuery("SELECT * FROM Resources WHERE " + KeywordComboBox.Text + " LIKE '%" + KeywordTextBox.Text + "%'")
+'        Dim resources = db.Resources.Where(Function(r) r.Title = KeywordTextBox.Text)
         If resources.Count() = 0 Then
             MessageBox.Show("No resource found")
         End If
@@ -34,8 +34,17 @@ Public Class SearchForm
             item.SubItems.Add(r.Subject_1 + " " + r.Subject_2)
             item.SubItems.Add(r.CheckOutPeriod)
             Dim checkouts = db.Checkouts.Where(Function(c) c.ResourceID = r.ResourceID)
-            Dim latestCheckout = checkouts.Max(Function(c) c.CheckOutDate)
-            Dim isAvailable = checkouts.FirstOrDefault(Function(c) c.CheckOutDate = latestCheckout).ReturnDate IsNot Nothing
+            Dim isAvailable As Boolean= False
+            If checkouts.Count() = 0 Then
+                isAvailable = True
+            Else
+                Dim latestCheckout = checkouts.Max(Function(c) c.CheckOutDate)
+                If checkouts.FirstOrDefault(Function(c) c.CheckOutDate = latestCheckout).ReturnDate IsNot Nothing Then
+                    isAvailable = True
+                End If
+            End If
+            
+'            Dim isAvailable = checkouts.Count() = 0 Or checkouts.FirstOrDefault(Function(c) c.CheckOutDate = latestCheckout).ReturnDate IsNot Nothing
             item.SubItems.Add(isAvailable)
             item.ToolTipText = r.BookInfo
         Next
