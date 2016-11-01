@@ -1,10 +1,11 @@
 ﻿Public Class LoginForm
     Dim db As ELibraryEntities = New ELibraryEntities()
+    Public Dim member As Member
     Private Sub LoginButton_Click(sender As Object, e As EventArgs) Handles LoginButton.Click
         If UserNameTextBox.Text = String.Empty Or PasswordTextBox.Text = String.Empty Then
             MessageBox.Show("Please enter email and password")
         Else
-            Dim member = db.Members.FirstOrDefault(Function(m) m.Email = UserNameTextBox.Text)
+            member = db.Members.FirstOrDefault(Function(m) m.Email = UserNameTextBox.Text)
             If member Is Nothing Then
                 MessageBox.Show("login unsuccessful - email incorrect")
             ElseIf member.Password <> PasswordTextBox.Text Then
