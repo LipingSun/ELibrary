@@ -32,7 +32,7 @@ Partial Class SearchForm
         Me.ISBN = CType(New System.Windows.Forms.ColumnHeader(),System.Windows.Forms.ColumnHeader)
         Me.Subject = CType(New System.Windows.Forms.ColumnHeader(),System.Windows.Forms.ColumnHeader)
         Me.CheckOutPeriod = CType(New System.Windows.Forms.ColumnHeader(),System.Windows.Forms.ColumnHeader)
-        Me.Avaibility = CType(New System.Windows.Forms.ColumnHeader(),System.Windows.Forms.ColumnHeader)
+        Me.Availability = CType(New System.Windows.Forms.ColumnHeader(),System.Windows.Forms.ColumnHeader)
         Me.SearchButton = New System.Windows.Forms.Button()
         Me.LogoutButton = New System.Windows.Forms.Button()
         Me.AccountButton = New System.Windows.Forms.Button()
@@ -65,7 +65,7 @@ Partial Class SearchForm
         '
         'SearchResourceListView
         '
-        Me.SearchResourceListView.Columns.AddRange(New System.Windows.Forms.ColumnHeader() {Me.Title, Me.Author, Me.PublicationDate, Me.Series, Me.ISBN, Me.Subject, Me.CheckOutPeriod, Me.Avaibility})
+        Me.SearchResourceListView.Columns.AddRange(New System.Windows.Forms.ColumnHeader() {Me.Title, Me.Author, Me.PublicationDate, Me.Series, Me.ISBN, Me.Subject, Me.CheckOutPeriod, Me.Availability})
         Me.SearchResourceListView.FullRowSelect = true
         Me.SearchResourceListView.Location = New System.Drawing.Point(43, 200)
         Me.SearchResourceListView.MultiSelect = false
@@ -109,9 +109,9 @@ Partial Class SearchForm
         '
         Me.CheckOutPeriod.Text = "CheckOutPeriod"
         '
-        'Avaibility
+        'Availability
         '
-        Me.Avaibility.Text = "Avaibility"
+        Me.Availability.Text = "Avaibility"
         '
         'SearchButton
         '
@@ -218,7 +218,7 @@ End Sub
     Friend WithEvents ISBN As ColumnHeader
     Friend WithEvents Subject As ColumnHeader
     Friend WithEvents CheckOutPeriod As ColumnHeader
-    Friend WithEvents Avaibility As ColumnHeader
+    Friend WithEvents Availability As ColumnHeader
     Friend WithEvents SearchButton As Button
     Friend WithEvents LogoutButton As Button
     Friend WithEvents AccountButton As Button
