@@ -1,13 +1,9 @@
-﻿
-Imports System.Data.Entity.Infrastructure
-Imports System.Data.Entity.Validation
-Imports System.Text
-
-Public Class SearchForm
+﻿Public Class SearchForm
     Dim db As ELibraryEntities = New ELibraryEntities()
 
-    Private Sub FormSearch_Load(sender As Object, e As EventArgs) Handles MyBase.Load
+    Private Sub SearchForm_Load(sender As Object, e As EventArgs) Handles  MyBase.VisibleChanged 
         KeywordComboBox.SelectedIndex = 0
+        SearchResourceListView.Items.Clear()
     End Sub
 
     Private Sub LogoutButton_Click(sender As Object, e As EventArgs) Handles LogoutButton.Click
@@ -23,7 +19,6 @@ Public Class SearchForm
         End If
 
         Dim resources = db.Resources.SqlQuery("SELECT * FROM Resources WHERE " + KeywordComboBox.Text + " LIKE '%" + KeywordTextBox.Text + "%'")
-'        Dim resources = db.Resources.Where(Function(r) r.Title = KeywordTextBox.Text)
         If resources.Count() = 0 Then
             MessageBox.Show("No resource found")
         End If
@@ -36,24 +31,18 @@ Public Class SearchForm
             item.SubItems.Add(r.Subject_1 + " " + r.Subject_2)
             item.SubItems.Add(r.CheckOutPeriod)
             Dim checkouts = db.Checkouts.Where(Function(c) c.ResourceID = r.ResourceID)
-            Dim isAvailable As Boolean= False
+            Dim isAvailable = False
             If checkouts.Count() = 0 Then
                 isAvailable = True
             Else
                 isAvailable = checkouts.All(Function(c) c.ReturnDate IsNot Nothing)
-'                Dim latestCheckout = checkouts.Max(Function(c) CDate(c.CheckOutDate))
-'                If checkouts.FirstOrDefault(Function(c) c.CheckOutDate = latestCheckout).ReturnDate IsNot Nothing Then
-'                    isAvailable = True
-'                End If
             End If
             
-'            Dim isAvailable = checkouts.Count() = 0 Or checkouts.FirstOrDefault(Function(c) c.CheckOutDate = latestCheckout).ReturnDate IsNot Nothing
             item.SubItems.Add(isAvailable)
             item.ToolTipText = r.BookInfo
             item.Name = r.ResourceID
             item.Tag = r
         Next
-
     End Sub
 
     Private Sub SearchForm_FormClosed(sender As Object, e As FormClosedEventArgs) Handles MyBase.FormClosed
@@ -70,7 +59,12 @@ Public Class SearchForm
     End Sub
 
     Private Sub CheckOutButton_Click(sender As Object, e As EventArgs) Handles CheckOutButton.Click
-        If SearchResourceListView.SelectedItems.Item(0).SubItems.Item(7).Text = "False"
+        If SearchResourceListView.SelectedItems.Count = 0 Then
+            MessageBox.Show("Please select a resource first")
+            Return
+        End If
+
+        If SearchResourceListView.SelectedItems.Item(0).SubItems.Item(7).Text = "False" Then
             MessageBox.Show("The resource is not available")
             Return
         End If
@@ -84,37 +78,11 @@ Public Class SearchForm
         db.SaveChanges()
         SearchResourceListView.SelectedItems.Item(0).SubItems.Item(7).Text = "False"
         MessageBox.Show("Checkout Succeed!")
-'        SaveChanges(db)
-
     End Sub
-
-    Public Sub SaveChanges(entities As ELibraryEntities)
-
-    Try
-        entities.SaveChanges()
-
-    Catch ex As DbEntityValidationException
-
-        Dim msg As New StringBuilder
-        msg.AppendLine(ex.Message)
-
-        For Each vr As DbEntityValidationResult In ex.EntityValidationErrors
-            For Each ve As DbValidationError In vr.ValidationErrors
-                msg.AppendLine(String.Format("{0}: {1}", ve.PropertyName, ve.ErrorMessage))
-            Next
-        Next
-
-        Throw New DbEntityValidationException(msg.ToString, ex.EntityValidationErrors, ex)
-
-    Catch ex As DbUpdateException
-        MessageBox.Show(ex.Message)
-            
-    End Try
-
-End Sub
 
     Private Sub AccountButton_Click(sender As Object, e As EventArgs) Handles AccountButton.Click
         Me.Hide()
         AccountForm.ShowDialog()
     End Sub
+
 End Class
