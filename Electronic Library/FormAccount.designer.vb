@@ -70,7 +70,7 @@ Partial Class AccountForm
         Me.AccountResourceListView.FullRowSelect = true
         Me.AccountResourceListView.Location = New System.Drawing.Point(41, 200)
         Me.AccountResourceListView.Name = "AccountResourceListView"
-        Me.AccountResourceListView.Size = New System.Drawing.Size(590, 222)
+        Me.AccountResourceListView.Size = New System.Drawing.Size(678, 222)
         Me.AccountResourceListView.TabIndex = 2
         Me.AccountResourceListView.UseCompatibleStateImageBehavior = false
         Me.AccountResourceListView.View = System.Windows.Forms.View.Details
@@ -117,7 +117,7 @@ Partial Class AccountForm
         'ReturnButton
         '
         Me.ReturnButton.Font = New System.Drawing.Font("Microsoft Sans Serif", 11!)
-        Me.ReturnButton.Location = New System.Drawing.Point(664, 200)
+        Me.ReturnButton.Location = New System.Drawing.Point(747, 200)
         Me.ReturnButton.Name = "ReturnButton"
         Me.ReturnButton.Size = New System.Drawing.Size(90, 30)
         Me.ReturnButton.TabIndex = 3
@@ -127,7 +127,7 @@ Partial Class AccountForm
         'RenewBotton
         '
         Me.RenewBotton.Font = New System.Drawing.Font("Microsoft Sans Serif", 11!)
-        Me.RenewBotton.Location = New System.Drawing.Point(664, 250)
+        Me.RenewBotton.Location = New System.Drawing.Point(747, 250)
         Me.RenewBotton.Name = "RenewBotton"
         Me.RenewBotton.Size = New System.Drawing.Size(90, 30)
         Me.RenewBotton.TabIndex = 4
@@ -177,7 +177,7 @@ Partial Class AccountForm
         'CloseButton
         '
         Me.CloseButton.Font = New System.Drawing.Font("Microsoft Sans Serif", 11!)
-        Me.CloseButton.Location = New System.Drawing.Point(664, 392)
+        Me.CloseButton.Location = New System.Drawing.Point(747, 392)
         Me.CloseButton.Name = "CloseButton"
         Me.CloseButton.Size = New System.Drawing.Size(90, 30)
         Me.CloseButton.TabIndex = 10
@@ -188,7 +188,7 @@ Partial Class AccountForm
         '
         Me.AddressLabel.AutoSize = true
         Me.AddressLabel.Font = New System.Drawing.Font("Microsoft Sans Serif", 11!)
-        Me.AddressLabel.Location = New System.Drawing.Point(358, 77)
+        Me.AddressLabel.Location = New System.Drawing.Point(397, 77)
         Me.AddressLabel.Name = "AddressLabel"
         Me.AddressLabel.Size = New System.Drawing.Size(62, 18)
         Me.AddressLabel.TabIndex = 11
@@ -198,7 +198,7 @@ Partial Class AccountForm
         '
         Me.DAddressLabel.AutoSize = true
         Me.DAddressLabel.Font = New System.Drawing.Font("Microsoft Sans Serif", 11!)
-        Me.DAddressLabel.Location = New System.Drawing.Point(358, 113)
+        Me.DAddressLabel.Location = New System.Drawing.Point(397, 113)
         Me.DAddressLabel.Name = "DAddressLabel"
         Me.DAddressLabel.Size = New System.Drawing.Size(32, 18)
         Me.DAddressLabel.TabIndex = 12
@@ -209,7 +209,7 @@ Partial Class AccountForm
         Me.AutoScaleDimensions = New System.Drawing.SizeF(6!, 13!)
         Me.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font
         Me.BackColor = System.Drawing.SystemColors.ButtonFace
-        Me.ClientSize = New System.Drawing.Size(784, 462)
+        Me.ClientSize = New System.Drawing.Size(872, 462)
         Me.Controls.Add(Me.DAddressLabel)
         Me.Controls.Add(Me.AddressLabel)
         Me.Controls.Add(Me.CloseButton)
@@ -223,8 +223,8 @@ Partial Class AccountForm
         Me.Controls.Add(Me.ResourceLabel)
         Me.Controls.Add(Me.AccountLabel)
         Me.MaximizeBox = false
-        Me.MaximumSize = New System.Drawing.Size(800, 500)
-        Me.MinimumSize = New System.Drawing.Size(800, 500)
+        Me.MaximumSize = New System.Drawing.Size(888, 500)
+        Me.MinimumSize = New System.Drawing.Size(888, 500)
         Me.Name = "AccountForm"
         Me.Text = "Account"
         Me.ResumeLayout(false)

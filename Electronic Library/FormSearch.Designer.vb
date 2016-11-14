@@ -70,7 +70,7 @@ Partial Class SearchForm
         Me.SearchResourceListView.Location = New System.Drawing.Point(43, 200)
         Me.SearchResourceListView.MultiSelect = false
         Me.SearchResourceListView.Name = "SearchResourceListView"
-        Me.SearchResourceListView.Size = New System.Drawing.Size(593, 222)
+        Me.SearchResourceListView.Size = New System.Drawing.Size(689, 222)
         Me.SearchResourceListView.TabIndex = 10
         Me.SearchResourceListView.UseCompatibleStateImageBehavior = false
         Me.SearchResourceListView.View = System.Windows.Forms.View.Details
@@ -116,7 +116,7 @@ Partial Class SearchForm
         'SearchButton
         '
         Me.SearchButton.Font = New System.Drawing.Font("Microsoft Sans Serif", 11!)
-        Me.SearchButton.Location = New System.Drawing.Point(546, 87)
+        Me.SearchButton.Location = New System.Drawing.Point(642, 88)
         Me.SearchButton.Name = "SearchButton"
         Me.SearchButton.Size = New System.Drawing.Size(90, 30)
         Me.SearchButton.TabIndex = 11
@@ -126,7 +126,7 @@ Partial Class SearchForm
         'LogoutButton
         '
         Me.LogoutButton.Font = New System.Drawing.Font("Microsoft Sans Serif", 11!)
-        Me.LogoutButton.Location = New System.Drawing.Point(655, 392)
+        Me.LogoutButton.Location = New System.Drawing.Point(759, 392)
         Me.LogoutButton.Name = "LogoutButton"
         Me.LogoutButton.Size = New System.Drawing.Size(90, 30)
         Me.LogoutButton.TabIndex = 12
@@ -136,7 +136,7 @@ Partial Class SearchForm
         'AccountButton
         '
         Me.AccountButton.Font = New System.Drawing.Font("Microsoft Sans Serif", 11!)
-        Me.AccountButton.Location = New System.Drawing.Point(655, 356)
+        Me.AccountButton.Location = New System.Drawing.Point(759, 356)
         Me.AccountButton.Name = "AccountButton"
         Me.AccountButton.Size = New System.Drawing.Size(90, 30)
         Me.AccountButton.TabIndex = 13
@@ -146,7 +146,7 @@ Partial Class SearchForm
         'CheckOutButton
         '
         Me.CheckOutButton.Font = New System.Drawing.Font("Microsoft Sans Serif", 11!)
-        Me.CheckOutButton.Location = New System.Drawing.Point(655, 198)
+        Me.CheckOutButton.Location = New System.Drawing.Point(759, 198)
         Me.CheckOutButton.Name = "CheckOutButton"
         Me.CheckOutButton.Size = New System.Drawing.Size(90, 30)
         Me.CheckOutButton.TabIndex = 14
@@ -158,14 +158,14 @@ Partial Class SearchForm
         Me.KeywordTextBox.Font = New System.Drawing.Font("Microsoft Sans Serif", 11!)
         Me.KeywordTextBox.Location = New System.Drawing.Point(166, 91)
         Me.KeywordTextBox.Name = "KeywordTextBox"
-        Me.KeywordTextBox.Size = New System.Drawing.Size(358, 24)
+        Me.KeywordTextBox.Size = New System.Drawing.Size(456, 24)
         Me.KeywordTextBox.TabIndex = 15
         Me.KeywordTextBox.Text = "Unbroken: A World War II Story of Survival, Resilience, and Redemption"
         '
         'ClearButton
         '
         Me.ClearButton.Font = New System.Drawing.Font("Microsoft Sans Serif", 11!)
-        Me.ClearButton.Location = New System.Drawing.Point(655, 88)
+        Me.ClearButton.Location = New System.Drawing.Point(759, 88)
         Me.ClearButton.Name = "ClearButton"
         Me.ClearButton.Size = New System.Drawing.Size(90, 30)
         Me.ClearButton.TabIndex = 16
@@ -187,7 +187,7 @@ Partial Class SearchForm
         Me.AutoScaleDimensions = New System.Drawing.SizeF(6!, 13!)
         Me.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font
         Me.BackColor = System.Drawing.SystemColors.ButtonFace
-        Me.ClientSize = New System.Drawing.Size(784, 462)
+        Me.ClientSize = New System.Drawing.Size(872, 462)
         Me.Controls.Add(Me.ResultLabel)
         Me.Controls.Add(Me.ClearButton)
         Me.Controls.Add(Me.KeywordTextBox)
@@ -199,8 +199,8 @@ Partial Class SearchForm
         Me.Controls.Add(Me.KeywordComboBox)
         Me.Controls.Add(Me.SearchLabel)
         Me.MaximizeBox = false
-        Me.MaximumSize = New System.Drawing.Size(800, 500)
-        Me.MinimumSize = New System.Drawing.Size(800, 500)
+        Me.MaximumSize = New System.Drawing.Size(888, 500)
+        Me.MinimumSize = New System.Drawing.Size(888, 500)
         Me.Name = "SearchForm"
         Me.Text = "Search"
         Me.ResumeLayout(false)
